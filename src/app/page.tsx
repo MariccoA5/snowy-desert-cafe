@@ -5,9 +5,10 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import {
-  GitHubIcon,
+  YelpIcon,
   InstagramIcon,
-  LinkedInIcon,
+  TiktokIcon,
+  GoogleIcon,
 } from '@/components/SocialIcons'
 
 import image1 from '@/images/photos/image-1.jpg'
@@ -24,7 +25,7 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
 }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className="group -m-1 p-1 " target='_blank' {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
@@ -77,14 +78,19 @@ export default function Home() {
               icon={InstagramIcon}
             />
             <SocialLink
-              href="https://github.com"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
-            <SocialLink
               href="https://www.tiktok.com/@snowydesertcafe"
               aria-label="Follow on Tiktok"
-              icon={LinkedInIcon}
+              icon={TiktokIcon}
+            />
+            <SocialLink
+              href="https://www.yelp.com/biz/snowy-desert-cafe-st-george"
+              aria-label="Leave a review on Yelp"
+              icon={YelpIcon}
+            />
+            <SocialLink
+              href="https://www.google.com/search?q=snowy+desert+cafe&sca_esv=568031865&bih=793&biw=1440&hl=en&sxsrf=AM9HkKmVU6Xc-8hwgZ-BV7hcOLjl4mH4fA%3A1695581405372&source=hp&ei=3YQQZdS-EPqIkPIP7uufgAk&iflsig=AO6bgOgAAAAAZRCS7QKOeOFKFKs_7PyUX_KsriRupt0f&oq=s&gs_lp=Egdnd3Mtd2l6IgFzKgIIADIHECMYigUYJzIEECMYJzIEECMYJzIUEC4YigUYsQMYgwEYxwEY0QMYkQIyFBAuGIoFGLEDGIMBGMcBGNEDGJECMhEQLhiABBixAxiDARjHARjRAzIFEC4YgAQyCxAAGIAEGLEDGIMBMhEQLhiKBRixAxiDARjHARjRAzIREC4YgAQYsQMYgwEYxwEY0QNI4gtQAFgAcAB4AJABAJgBWKABWKoBATG4AQHIAQD4AQE&sclient=gws-wiz&bshm=rime/1#lrd=0x80ca5b8d0a64b963:0xbabdc61c3240bc0b,1"
+              aria-label="Leave a review on Google"
+              icon={GoogleIcon}
             />
           </div>
         </div>

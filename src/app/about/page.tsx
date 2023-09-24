@@ -5,10 +5,12 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import {
-  GitHubIcon,
+  YelpIcon,
+  GoogleIcon,
   InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
+  TiktokIcon,
+  AddressIcon,
+  PhoneIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 
@@ -23,9 +25,21 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
   children: React.ReactNode
 }) {
+  if (href === '') return (
+    <li className={clsx(className, 'flex')}>
+      <p
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+      >
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <span className="ml-4">{children}</span>
+      </p>
+    </li>
+  )
+
   return (
     <li className={clsx(className, 'flex')}>
       <Link
+        target='_blank'
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
@@ -33,17 +47,6 @@ function SocialLink({
         <span className="ml-4">{children}</span>
       </Link>
     </li>
-  )
-}
-
-function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
   )
 }
 
@@ -116,20 +119,32 @@ export default function About() {
             <SocialLink href="https://www.instagram.com/snowydesertcafe/" icon={InstagramIcon} className="mt-4">
               Follow on Instagram
             </SocialLink>
-            <SocialLink href="https://www.tiktok.com/@snowydesertcafe" icon={LinkedInIcon} className="mt-4">
+            <SocialLink href="https://www.tiktok.com/@snowydesertcafe" icon={TiktokIcon} className="mt-4">
               Follow on Tiktok
             </SocialLink>
-            <SocialLink href="https://www.yelp.com/biz/snowy-desert-cafe-st-george" icon={GitHubIcon} className="mt-4">
-              Check out our Yelp
+            <SocialLink href="https://www.yelp.com/biz/snowy-desert-cafe-st-george" icon={YelpIcon} className="mt-4">
+              Leave a review on our Yelp
             </SocialLink>
-            
+            {/* google */}
+            <SocialLink href="https://www.google.com/search?q=snowy+desert+cafe&sca_esv=568031865&sxsrf=AM9HkKnxMOasbIBFkYUjN-ursQl_tcCRVg%3A1695579226125&source=hp&ei=WnwQZf2rBZrakPIP-oSukAc&iflsig=AO6bgOgAAAAAZRCKavuqTeeQHPLAyjaxp2zTdwOMbw3i&oq=snowy&gs_lp=Egdnd3Mtd2l6IgVzbm93eSoCCAAyBxAjGIoFGCcyBBAjGCcyBBAjGCcyBxAAGIoFGEMyChAAGIAEGBQYhwIyCxAuGK8BGMcBGIAEMgsQLhiABBixAxiDATIIEAAYigUYsQMyCxAuGIoFGLEDGIMBMggQABiABBixA0ikC1AAWNsEcAB4AJABAJgBbaAB3AOqAQM0LjG4AQHIAQD4AQHCAg0QLhivARjHARiKBRhDwgIHEC4YigUYQ8ICCxAuGIAEGMcBGNEDwgIREC4YgAQYsQMYgwEYxwEY0QPCAgsQABiABBixAxiDAcICBRAAGIAEwgILEC4YgAQYxwEYrwHCAggQABiABBjJA8ICFBAuGIAEGLEDGIMBGMcBGK8BGJgFwgIIEAAYigUYkgM&sclient=gws-wiz&bshm=rime/1#ip=1&lrd=0x80ca5b8d0a64b963:0xbabdc61c3240bc0b,1" icon={GoogleIcon} className="mt-4">
+              Leave a review on Google
+            </SocialLink>
             <SocialLink
-              href="#"
-              icon={MailIcon}
+              href=""
+              icon={PhoneIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              email coming soon
+              (435) 635-1196
             </SocialLink>
+            <SocialLink
+              href="https://www.google.com/maps/dir//snowy+desert+cafe/@37.0881354,-113.5634088,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80ca5b8d0a64b963:0xbabdc61c3240bc0b!2m2!1d-113.5557403!2d37.0838546?entry=ttu"
+              icon={AddressIcon}
+              className="mt-4"
+            >
+              1480 S River Rd Ste 101, St. George, UT 84790
+            </SocialLink>
+
+            
           </ul>
         </div>
       </div>

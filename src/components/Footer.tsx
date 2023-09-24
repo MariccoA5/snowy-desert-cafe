@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import { ContainerInner, ContainerOuter } from '@/components/Container'
 
+const orderNow: string = 'https://food.google.com/chooseprovider?restaurantId=/g/11s7gqmfgt&g2lbs=ANTchaP45HLJdnDEWjRaGLNeH3lHf4JPcPlz5kjWtZvcz2xdqiX9MMzxsABwbIMJYwwN2qyn0eBI0WR_m30yztGZigodkbfgBKB-2oE9aQKc49pp-IOv5onSzTQGXqV05NXk_HuE2VIq&hl=en-US&gl=us&cs=1&ssta=1&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&gei=73sQZeGwNszHkPIP6fuG6A0&ei=73sQZeGwNszHkPIP6fuG6A0&opi=89978449&addressId&orderType=2&partnerId=11964329533172037388&fulfillmentTime&menuSearchQuery&cartId=GAEiGGZEa05mQ2tlUm1lOXE1bGxJQXRvbFE9PQ%3D%3D&fo_s=OA&dineInLocationId&sei=CVGuE30QfBy0EZjiRirZB-mO&utm_campaign&utm_source=search'
+
 function NavLink({
   href,
   children,
@@ -45,7 +47,7 @@ export function Footer() {
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/menu">Menu</NavLink>
-                <NavLink href="https://order.toasttab.com/online/snowy-desert-cafe-1480-south-river-road-ste-101">Order Online</NavLink>
+                <NavLink href={orderNow}>Order Online</NavLink>
                 
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">

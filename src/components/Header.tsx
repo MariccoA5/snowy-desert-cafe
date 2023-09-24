@@ -11,6 +11,8 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
 
+const orderNow = 'https://food.google.com/chooseprovider?restaurantId=/g/11s7gqmfgt&g2lbs=ANTchaP45HLJdnDEWjRaGLNeH3lHf4JPcPlz5kjWtZvcz2xdqiX9MMzxsABwbIMJYwwN2qyn0eBI0WR_m30yztGZigodkbfgBKB-2oE9aQKc49pp-IOv5onSzTQGXqV05NXk_HuE2VIq&hl=en-US&gl=us&cs=1&ssta=1&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&gei=73sQZeGwNszHkPIP6fuG6A0&ei=73sQZeGwNszHkPIP6fuG6A0&opi=89978449&addressId&orderType=2&partnerId=11964329533172037388&fulfillmentTime&menuSearchQuery&cartId=GAEiGGZEa05mQ2tlUm1lOXE1bGxJQXRvbFE9PQ%3D%3D&fo_s=OA&dineInLocationId&sei=CVGuE30QfBy0EZjiRirZB-mO&utm_campaign&utm_source=search'
+
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -153,7 +155,7 @@ function MobileNavigation(
                 <MobileNavItem href="/">Home</MobileNavItem>
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href='/menu'>Menu</MobileNavItem>
-                <MobileNavItem href='https://order.toasttab.com/online/snowy-desert-cafe-1480-south-river-road-ste-101'>Order</MobileNavItem>
+                <MobileNavItem href={orderNow}>Order</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -216,7 +218,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
         <NavItem href="/">Home</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href='/menu'>Menu</NavItem>
-        <NavItem href='https://order.toasttab.com/online/snowy-desert-cafe-1480-south-river-road-ste-101'>Order</NavItem>
+        <NavItem href={orderNow}>Order</NavItem>
       </ul>
     </nav>
   )
@@ -249,7 +251,7 @@ function clamp(number: number, a: number, b: number) {
   let max = Math.max(a, b)
   return Math.min(Math.max(number, min), max)
 }
-
+// Navbar Avatar
 function AvatarContainer({
   className,
   ...props
@@ -258,13 +260,14 @@ function AvatarContainer({
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:ring-white/10',
+        'h-10 w-10 p-0.5',
       )}
       {...props}
     />
   )
 }
 
+// Stationary Avatar
 function Avatar({
   large = false,
   className,
@@ -281,10 +284,10 @@ function Avatar({
     >
       <Image
         src={avatarImage}
-        alt=""
+        alt="panda avatar"
         sizes={large ? '4rem' : '2.25rem'}
         className={clsx(
-          'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',
+          'object-cover',
           large ? 'h-16 w-16' : 'h-9 w-9',
         )}
         priority
