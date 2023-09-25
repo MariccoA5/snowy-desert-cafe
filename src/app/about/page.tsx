@@ -2,7 +2,6 @@ import { type Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
-
 import { Container } from '@/components/Container'
 import {
   YelpIcon,
@@ -12,8 +11,13 @@ import {
   AddressIcon,
   PhoneIcon,
 } from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+import storeImage from '@/images/store.jpg'
 
+
+
+
+
+    
 function SocialLink({
   className,
   href,
@@ -25,21 +29,20 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
   children: React.ReactNode
 }) {
-  if (href === '') return (
-    <li className={clsx(className, 'flex')}>
-      <p
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-      >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
-        <span className="ml-4">{children}</span>
-      </p>
-    </li>
-  )
+  if (href === '')
+    return (
+      <li className={clsx(className, 'flex')}>
+        <p className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500">
+          <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+          <span className="ml-4">{children}</span>
+        </p>
+      </li>
+    )
 
   return (
     <li className={clsx(className, 'flex')}>
       <Link
-        target='_blank'
+        target="_blank"
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
@@ -57,13 +60,14 @@ export const metadata: Metadata = {
 }
 
 export default function About() {
+  
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
-              src={portraitImage}
+              src={storeImage}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
@@ -72,7 +76,8 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Snowy Desert Cafe,<br/> St. George, Utah
+            Snowy Desert Cafe,
+            <br /> St. George, Utah
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
@@ -91,8 +96,8 @@ export default function About() {
               But the real star of the show at Snowy Desert Cafe is our
               delicious and refreshing desserts. From the classic bingsu to the
               mouth-watering snow bowls, Snowy Desert Cafe has a wide range of
-              options that will satisfy any sweet tooth. Our mango snow bowl
-              is a favorite among regulars, with its perfect blend of sweet and
+              options that will satisfy any sweet tooth. Our mango snow bowl is
+              a favorite among regulars, with its perfect blend of sweet and
               tangy flavors that make for a truly refreshing treat.
             </p>
             <p>
@@ -116,17 +121,33 @@ export default function About() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="https://www.instagram.com/snowydesertcafe/" icon={InstagramIcon} className="mt-4">
+            <SocialLink
+              href="https://www.instagram.com/snowydesertcafe/"
+              icon={InstagramIcon}
+              className="mt-4"
+            >
               Follow on Instagram
             </SocialLink>
-            <SocialLink href="https://www.tiktok.com/@snowydesertcafe" icon={TiktokIcon} className="mt-4">
+            <SocialLink
+              href="https://www.tiktok.com/@snowydesertcafe"
+              icon={TiktokIcon}
+              className="mt-4"
+            >
               Follow on Tiktok
             </SocialLink>
-            <SocialLink href="https://www.yelp.com/biz/snowy-desert-cafe-st-george" icon={YelpIcon} className="mt-4">
+            <SocialLink
+              href="https://www.yelp.com/biz/snowy-desert-cafe-st-george"
+              icon={YelpIcon}
+              className="mt-4"
+            >
               Leave a review on our Yelp
             </SocialLink>
             {/* google */}
-            <SocialLink href="https://www.google.com/search?q=snowy+desert+cafe&sca_esv=568031865&sxsrf=AM9HkKnxMOasbIBFkYUjN-ursQl_tcCRVg%3A1695579226125&source=hp&ei=WnwQZf2rBZrakPIP-oSukAc&iflsig=AO6bgOgAAAAAZRCKavuqTeeQHPLAyjaxp2zTdwOMbw3i&oq=snowy&gs_lp=Egdnd3Mtd2l6IgVzbm93eSoCCAAyBxAjGIoFGCcyBBAjGCcyBBAjGCcyBxAAGIoFGEMyChAAGIAEGBQYhwIyCxAuGK8BGMcBGIAEMgsQLhiABBixAxiDATIIEAAYigUYsQMyCxAuGIoFGLEDGIMBMggQABiABBixA0ikC1AAWNsEcAB4AJABAJgBbaAB3AOqAQM0LjG4AQHIAQD4AQHCAg0QLhivARjHARiKBRhDwgIHEC4YigUYQ8ICCxAuGIAEGMcBGNEDwgIREC4YgAQYsQMYgwEYxwEY0QPCAgsQABiABBixAxiDAcICBRAAGIAEwgILEC4YgAQYxwEYrwHCAggQABiABBjJA8ICFBAuGIAEGLEDGIMBGMcBGK8BGJgFwgIIEAAYigUYkgM&sclient=gws-wiz&bshm=rime/1#ip=1&lrd=0x80ca5b8d0a64b963:0xbabdc61c3240bc0b,1" icon={GoogleIcon} className="mt-4">
+            <SocialLink
+              href="https://www.google.com/search?q=snowy+desert+cafe&sca_esv=568031865&sxsrf=AM9HkKnxMOasbIBFkYUjN-ursQl_tcCRVg%3A1695579226125&source=hp&ei=WnwQZf2rBZrakPIP-oSukAc&iflsig=AO6bgOgAAAAAZRCKavuqTeeQHPLAyjaxp2zTdwOMbw3i&oq=snowy&gs_lp=Egdnd3Mtd2l6IgVzbm93eSoCCAAyBxAjGIoFGCcyBBAjGCcyBBAjGCcyBxAAGIoFGEMyChAAGIAEGBQYhwIyCxAuGK8BGMcBGIAEMgsQLhiABBixAxiDATIIEAAYigUYsQMyCxAuGIoFGLEDGIMBMggQABiABBixA0ikC1AAWNsEcAB4AJABAJgBbaAB3AOqAQM0LjG4AQHIAQD4AQHCAg0QLhivARjHARiKBRhDwgIHEC4YigUYQ8ICCxAuGIAEGMcBGNEDwgIREC4YgAQYsQMYgwEYxwEY0QPCAgsQABiABBixAxiDAcICBRAAGIAEwgILEC4YgAQYxwEYrwHCAggQABiABBjJA8ICFBAuGIAEGLEDGIMBGMcBGK8BGJgFwgIIEAAYigUYkgM&sclient=gws-wiz&bshm=rime/1#ip=1&lrd=0x80ca5b8d0a64b963:0xbabdc61c3240bc0b,1"
+              icon={GoogleIcon}
+              className="mt-4"
+            >
               Leave a review on Google
             </SocialLink>
             <SocialLink
@@ -143,8 +164,6 @@ export default function About() {
             >
               1480 S River Rd Ste 101, St. George, UT 84790
             </SocialLink>
-
-            
           </ul>
         </div>
       </div>
