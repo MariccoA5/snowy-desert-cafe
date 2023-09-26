@@ -3,8 +3,7 @@ import { StarIcon } from '@heroicons/react/solid'
 import Image, { StaticImageData } from 'next/image'
 import reviewer1 from '@/images/photos/Reviews/reviewer-1.png'
 import reviewer2 from '@/images/photos/Reviews/reviewer-2.png'
-import reviewer3 from '@/images/photos/Reviews/reviewer-3.png'
-import { useTheme } from 'next-themes'
+import reviewer3 from '@/images/photos/Reviews/reviewer3.jpeg'
 
 type Review = {
   id: number,
@@ -65,16 +64,16 @@ export default function UserReviews(): JSX.Element {
     <div className='bg-transparent'>
       <div>
       
-        <h2 className="sr-only">Customer Reviews</h2>
+        <h2 className="sr-only ">Customer Reviews</h2>
 
-        <div className={'-my-10'}>
-        <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100 ">Recent reviews</h2>
+        <div className={'-my-10 mx-32 '}>
+        <h2 className="font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl text-2xl text-center">What people are saying</h2>
           {reviews.map((review, reviewIdx) => (
-            <div key={review.id} className={`flex space-x-4 text-sm ${classNames('text-gray-500', 'dark:text-gray-100')}`}>
-              <div className="flex-none py-4">
-                <Image src={review.avatarSrc} alt="avatar" width='10' height='10' className="h-10 w-10 rounded-full bg-gray-100" />
+            <div key={review.id} className={`flex space-x-4 text-sm ${classNames('text-gray-600', 'dark:text-zinc-100')}`}>
+              <div className="flex-none py-10">
+                <Image src={review.avatarSrc} alt="avatar" width='0' height='0' className="h-10 w-10 rounded-full bg-gray-100" />
               </div>
-              <div className={classNames(reviewIdx === 0 ? '' : 'border-t border-gray-200', 'flex-1 py-4')}>
+              <div className={classNames(reviewIdx === 0 ? '' : 'border-t mt-5 border-gray-200', 'flex-1 py-4')}>
                 <h3 className={`font-medium ${classNames('text-gray-900', 'dark:text-white')}`}>{review.author}</h3>
                 <p className={`text-gray-500 ${classNames('dark:text-gray-400')}`}>
                   <time dateTime={review.datetime}>{review.date}</time>

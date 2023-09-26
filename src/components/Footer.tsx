@@ -51,7 +51,7 @@ export function Footer() {
                 
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                Website made by Maricco Allen
+                Made by MariccoA5@gmail.com
               </p>
             </div>
           </ContainerInner>
