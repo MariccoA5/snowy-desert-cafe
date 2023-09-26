@@ -3,13 +3,15 @@
 import { Fragment, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { usePathname} from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import avatarImage from '@/images/avatar.jpg'
+
+
 
 const orderNow = 'https://food.google.com/chooseprovider?restaurantId=/g/11s7gqmfgt&g2lbs=ANTchaP45HLJdnDEWjRaGLNeH3lHf4JPcPlz5kjWtZvcz2xdqiX9MMzxsABwbIMJYwwN2qyn0eBI0WR_m30yztGZigodkbfgBKB-2oE9aQKc49pp-IOv5onSzTQGXqV05NXk_HuE2VIq&hl=en-US&gl=us&cs=1&ssta=1&fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&gei=73sQZeGwNszHkPIP6fuG6A0&ei=73sQZeGwNszHkPIP6fuG6A0&opi=89978449&addressId&orderType=2&partnerId=11964329533172037388&fulfillmentTime&menuSearchQuery&cartId=GAEiGGZEa05mQ2tlUm1lOXE1bGxJQXRvbFE9PQ%3D%3D&fo_s=OA&dineInLocationId&sei=CVGuE30QfBy0EZjiRirZB-mO&utm_campaign&utm_source=search'
 
@@ -173,6 +175,7 @@ function NavItem({
   children: React.ReactNode;
 }) {
   const isExternalLink = href?.startsWith('http');
+  const path = usePathname()
 
   if (isExternalLink) {
     return (
@@ -188,8 +191,7 @@ function NavItem({
       </li>
     );
   }
-  
-  let isActive = usePathname() === href;
+  let isActive = path === href;
 
   return (
     <li>

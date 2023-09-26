@@ -68,7 +68,7 @@ export default function About() {
           <div className="max-w-xs px-2.5 lg:max-w-none">
             <Image
               src={storeImage}
-              alt=""
+              alt="store image"
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
             />
@@ -86,10 +86,10 @@ export default function About() {
               for a refreshing dessert or a relaxing place to hang out.
             </p>
             <p>
-              As soon as you walk in, you'll be greeted with a cozy and
-              welcoming atmosphere that's perfect for a casual hangout or an
+              As soon as you walk in, you&apos;ll be greeted with a cozy and
+              welcoming atmosphere that&apos;s perfect for a casual hangout or an
               intimate catch-up session with friends. The decor is simple yet
-              charming, with comfortable seating and a friendly staff that's
+              charming, with comfortable seating and a friendly staff that&apos;s
               always ready to help you with your orders.
             </p>
             <p>
@@ -101,19 +101,19 @@ export default function About() {
               tangy flavors that make for a truly refreshing treat.
             </p>
             <p>
-              But it's not just the desserts that make Snowy Desert Cafe stand
+              But it&apos;s not just the desserts that make Snowy Desert Cafe stand
               out. The quality of our ingredients is top-notch, ensuring that
-              every bite is packed with flavor. And if you're in the mood for a
+              every bite is packed with flavor. And if you&apos;re in the mood for a
               savory snack, Snowy Desert Cafe also offers a variety of light
               bites, like their tasty chicken wings or their delicious Korean
               street food.
             </p>
             <p>
-              Whether you're looking for a quick bite or a place to unwind,
+              Whether you&apos;re looking for a quick bite or a place to unwind,
               Snowy Desert Cafe is the perfect destination. With its friendly
-              atmosphere, top-quality ingredients, and delicious desserts, it's
-              no wonder why it's become a favorite among locals and visitors
-              alike. So next time you're in St. George, be sure to swing by and
+              atmosphere, top-quality ingredients, and delicious desserts, it&apos;s
+              no wonder why it&apos;s become a favorite among locals and visitors
+              alike. So next time you&apos;re in St. George, be sure to swing by and
               treat yourself to a sweet and refreshing experience at Snowy
               Desert Cafe.
             </p>

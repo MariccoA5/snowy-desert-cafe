@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { Client } from '@googlemaps/google-maps-services-js';
 // import { Newsletter } from '@/components/Newsletter'
-
+import UserReviews from '@/components/Reviews'
 import { Container } from '@/components/Container'
 import {
   YelpIcon,
@@ -59,11 +58,7 @@ function Photos() {
   )
 }
 
-// const data = await getData()
-
 export default function Home() {
-
-  
 
   return (
     <>
@@ -103,26 +98,14 @@ export default function Home() {
       <Photos />
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          {/* <Reviews reviews={reviews}/> */}
+          
 
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             {/* <Newsletter />*/}
-          
           </div>
         </div>
+        <UserReviews />
       </Container>
     </>
   )
 }
-// async function getData() {
-//   const res = await fetch('https://maps.googleapis.com/maps/api/place/details/json  ?fields=name%2author_name%2rating%2C&place_id=ChIJY7lkCo1byoARC7xAMhzGvbo &key=AIzaSyD8lJebghloaqg2NbunU-K7UGAcR8YtmKQ')
-//   // The return value is *not* serialized
-//   // You can return Date, Map, Set, etc.
- 
-//   if (!res.ok) {
-//     // This will activate the closest `error.js` Error Boundary
-//     throw new Error('Failed to fetch data')
-//   }
- 
-//   return res.json()
-// }
