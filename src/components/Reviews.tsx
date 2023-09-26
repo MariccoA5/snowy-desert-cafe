@@ -64,9 +64,9 @@ export default function UserReviews(): JSX.Element {
     <div className='bg-transparent'>
       <div>
       
-        <h2 className="sr-only ">Customer Reviews</h2>
+        <span className="sr-only">Customer Reviews</span>
 
-        <div className={'-my-10 mx-32 '}>
+        <div className={'-my-10 lg:mx-32 '}>
         <h2 className="font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl text-2xl text-center">What people are saying</h2>
           {reviews.map((review, reviewIdx) => (
             <div key={review.id} className={`flex space-x-4 text-sm ${classNames('text-gray-600', 'dark:text-zinc-100')}`}>
@@ -95,7 +95,7 @@ export default function UserReviews(): JSX.Element {
                   </span>
                 </div>
 
-                <div className={`mt-2 text-gray-500 ${classNames('dark:text-gray-400')}`} dangerouslySetInnerHTML={{ __html: review.content }} />
+                <div className={`mt-2 text-gray-600 ${classNames('dark:text-gray-200')}`} dangerouslySetInnerHTML={{ __html: review.content }} />
               </div>
             </div>
           ))}
